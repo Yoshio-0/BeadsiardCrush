@@ -1306,6 +1306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963194228}
+  - component: {fileID: 963194230}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
@@ -1356,8 +1357,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 19
-  field of view: 12
+  far clip plane: 30
+  field of view: 10
   orthographic: 0
   orthographic size: 1.6
   m_Depth: -1
@@ -1406,6 +1407,60 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985a681a5ab132444b2a843b03f15dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pinchCamera:
+    m_Name: Pinch Camera
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 2cc28395-07dd-40c1-b7d3-2e8f163c8479
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Two Modifiers
+      m_Id: 70d2b77d-dd46-4a26-9db9-9a96b22e9385
+      m_Path: TwoModifiers
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pinch Camera
+      m_Flags: 4
+    - m_Name: modifier1
+      m_Id: 62cb7e15-2823-4fda-ab34-0822acecd678
+      m_Path: <Touchscreen>/touch0/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pinch Camera
+      m_Flags: 8
+    - m_Name: modifier2
+      m_Id: 7cd4c607-0cd4-4498-9e3b-d112c034bb84
+      m_Path: <Touchscreen>/touch1/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pinch Camera
+      m_Flags: 8
+    - m_Name: binding
+      m_Id: 23feb485-420b-4f9b-b38a-5c0275399564
+      m_Path: <Touchscreen>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pinch Camera
+      m_Flags: 8
+    m_Flags: 0
+  _cameraMain: {fileID: 0}
 --- !u!1 &1012119362
 GameObject:
   m_ObjectHideFlags: 0
