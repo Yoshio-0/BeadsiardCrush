@@ -1306,7 +1306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963194228}
-  - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
@@ -1407,7 +1407,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!114 &963194230
+--- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1416,51 +1416,77 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985a681a5ab132444b2a843b03f15dcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a188f745725cca4c92bd262acbf3a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pinchCamera:
-    m_Name: Pinch Camera
+  _touch0Contact:
+    m_Name: Touch 0 Contact
     m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 2cc28395-07dd-40c1-b7d3-2e8f163c8479
+    m_ExpectedControlType: 
+    m_Id: 2ccf8be4-c6ae-461b-ad29-db0d8843bbf5
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: Two Modifiers
-      m_Id: 70d2b77d-dd46-4a26-9db9-9a96b22e9385
-      m_Path: TwoModifiers
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pinch Camera
-      m_Flags: 4
-    - m_Name: modifier1
-      m_Id: 62cb7e15-2823-4fda-ab34-0822acecd678
+    - m_Name: 
+      m_Id: 1cf50dd6-3ed2-464c-9103-44d35df3d4a6
       m_Path: <Touchscreen>/touch0/press
-      m_Interactions: 
+      m_Interactions: Press
       m_Processors: 
       m_Groups: 
-      m_Action: Pinch Camera
-      m_Flags: 8
-    - m_Name: modifier2
-      m_Id: 7cd4c607-0cd4-4498-9e3b-d112c034bb84
-      m_Path: <Touchscreen>/touch1/press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pinch Camera
-      m_Flags: 8
-    - m_Name: binding
-      m_Id: 23feb485-420b-4f9b-b38a-5c0275399564
-      m_Path: <Touchscreen>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pinch Camera
-      m_Flags: 8
+      m_Action: Touch 0 Contact
+      m_Flags: 0
     m_Flags: 0
-  _cameraMain: {fileID: 0}
+  _touch1Contact:
+    m_Name: Touch 1 Contact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ba4a92d4-46ba-47cd-bcc1-19b837d46f52
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c4f7aa73-83e9-479b-b095-0296b6e902b4
+      m_Path: <Touchscreen>/touch1/press
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Touch 1 Contact
+      m_Flags: 0
+    m_Flags: 0
+  _touch0Position:
+    m_Name: Touch 0 Position
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 53256280-aeed-4571-be0b-7bbb07f10ddd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4c724bb8-436f-4105-aabe-8745b1c67b1e
+      m_Path: <Touchscreen>/touch0/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Touch 0 Position
+      m_Flags: 0
+    m_Flags: 0
+  _touch1Position:
+    m_Name: Touch 1 Position
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 0729f2d0-73c3-4b7e-a234-896bf9755615
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 57ec3dd0-f52c-4f27-9ecf-d9796a442dee
+      m_Path: <Touchscreen>/touch1/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Touch 1 Position
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &1012119362
 GameObject:
   m_ObjectHideFlags: 0

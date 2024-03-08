@@ -5,7 +5,7 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
 
-public class PinchCamera : MonoBehaviour
+public class Test_PinchCamera : MonoBehaviour
 {
     [SerializeField] InputAction _pinchCamera = null;
 
@@ -63,12 +63,12 @@ public class PinchCamera : MonoBehaviour
 
     private void ChangeCameraDistance(float fingerDistance) 
     {
-        float cameraPosY_offset = (fingerDistance * _offset) * -1;
+        float cameraPosY_offset = fingerDistance * _offset;
 
         if (cameraPosY_offset + _cameraMainTransform.position.y > _cameraPosY_Min &&
             cameraPosY_offset + _cameraMainTransform.position.y < _cameraPosY_Max)
         {
-            _cameraMainTransform.position += new Vector3(0, cameraPosY_offset, 0);
+            _cameraMainTransform.position -= new Vector3(0, cameraPosY_offset, 0);
         }
         else 
         {
