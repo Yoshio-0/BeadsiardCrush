@@ -107,14 +107,19 @@ public class DragAndShoot : MonoBehaviour
             }
         };
 
-        _press.canceled += _ => { _isDragging = false; };
+        _press.canceled += _ => Initialize_isDragging();
     }
 
     private void UnsubscribeEvents() 
     {
         _screenPosition.performed -= context => { _currentScreenPosition = context.ReadValue<Vector2>(); };
         _press.started -= _ => { StartCoroutine(UpdateDraggingPosition()); };
-        _press.canceled -= _ => { _isDragging = false; };
+        _press.canceled -= _ => Initialize_isDragging();
+    }
+
+    private void Initialize_isDragging() 
+    {
+        _isDragging = false;
     }
 
     private IEnumerator UpdateDraggingPosition()
