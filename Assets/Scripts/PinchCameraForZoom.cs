@@ -3,16 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PinchCameraForZoom : MonoBehaviour
 {
-    private Transform _cameraMainTransform;
-
     [SerializeField] InputAction _touch0Contact;
     [SerializeField] InputAction _touch1Contact;
     [SerializeField] InputAction _touch0Position;
     [SerializeField] InputAction _touch1Position;
 
+    private Transform _cameraMainTransform = null;
     private float _previousMagnitude = 0;
     private int _touchCount = 0;
-
     private const float _cameraPosY_Default = 18f;
     private const float _cameraPosY_Min = 5f;
     private const float _cameraPosY_Max = 29f;
@@ -20,7 +18,7 @@ public class PinchCameraForZoom : MonoBehaviour
 
     void Awake()
     {
-        _cameraMainTransform = GetComponent<Transform>();
+        SetReference();
     }
 
     void OnEnable()
@@ -29,21 +27,29 @@ public class PinchCameraForZoom : MonoBehaviour
         _touch1Contact.Enable();
         _touch0Position.Enable();
         _touch1Position.Enable();
+        SubscribeEvents();
+    }
 
-        _touch0Contact.performed += _ => _touchCount++;
-        _touch1Contact.performed += _ => _touchCount++;
-        
-        _touch0Contact.canceled += _ =>
-        {
-            _touchCount = 0;
-            _previousMagnitude = 0;
-        };
+    void OnDisable()
+    {
+        UnsubscribeEvents();
+        _touch0Contact.Disable();
+        _touch1Contact.Disable();
+        _touch0Position.Disable();
+        _touch1Position.Disable();
+    }
 
-        _touch1Contact.canceled += _ =>
-        {
-            _touchCount = 0;
-            _previousMagnitude = 0;
-        };
+    private void SetReference() 
+    {
+        _cameraMainTransform = GetComponent<Transform>();
+    }
+
+    private void SubscribeEvents() 
+    {
+        _touch0Contact.performed += _ => CountingTouch();
+        _touch1Contact.performed += _ => CountingTouch();
+        _touch0Contact.canceled += _ => { Initialize(); };
+        _touch1Contact.canceled += _ => { Initialize(); };
 
         _touch1Position.performed += _ =>
         {
@@ -52,21 +58,48 @@ public class PinchCameraForZoom : MonoBehaviour
                 return;
             }
 
-            var magnitude = (_touch0Position.ReadValue<Vector2>() - _touch1Position.ReadValue<Vector2>()).magnitude;
-            if (_previousMagnitude == 0)
-            {
-                _previousMagnitude = magnitude;
-            }
-            var difference = magnitude - _previousMagnitude;
-            _previousMagnitude = magnitude;
-
-            ChangeCameraDistance(difference);
+            ChangeCameraDistance(CalculateMagnitudeDifference());
         };
     }
 
-    private void ChangeCameraDistance(float difference)
+    private void UnsubscribeEvents() 
     {
-        float cameraPosY_offset = difference * _speed;
+        _touch0Contact.performed -= _ => CountingTouch();
+        _touch1Contact.performed -= _ => CountingTouch();
+        _touch0Contact.canceled -= _ => { Initialize(); };
+        _touch1Contact.canceled -= _ => { Initialize(); };
+        _touch1Position.performed -= _ => { ChangeCameraDistance(CalculateMagnitudeDifference()); };
+    }
+
+    private void CountingTouch() 
+    {
+        _touchCount++;
+    }
+
+    private void Initialize()
+    {
+        _touchCount = 0;
+        _previousMagnitude = 0;
+    }
+
+    private float CalculateMagnitudeDifference()
+    {
+        float magnitude = (_touch0Position.ReadValue<Vector2>() - _touch1Position.ReadValue<Vector2>()).magnitude;
+
+        if (_previousMagnitude == 0)
+        {
+            _previousMagnitude = magnitude;
+        }
+
+        float magnitudeDifference = magnitude - _previousMagnitude;
+        _previousMagnitude = magnitude;
+
+        return magnitudeDifference;
+    }
+
+    private void ChangeCameraDistance(float magnitudeDifference)
+    {
+        float cameraPosY_offset = magnitudeDifference * _speed;
 
         if (cameraPosY_offset + _cameraMainTransform.position.y > _cameraPosY_Min &&
             cameraPosY_offset + _cameraMainTransform.position.y < _cameraPosY_Max)

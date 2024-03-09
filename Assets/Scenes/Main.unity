@@ -717,14 +717,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,14 +1282,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,14 +1765,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1138535723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,14 +2058,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1185362792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,14 +2526,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1325896182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,14 +3027,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 1
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1368720439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,14 +3438,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1491381038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,14 +3731,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1553513046
 GameObject:
   m_ObjectHideFlags: 0
@@ -4779,14 +4723,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1991092954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,14 +5016,7 @@ MonoBehaviour:
       m_Action: Screen Position
       m_Flags: 0
     m_Flags: 0
-  _currentScreenPosition: {x: 0, y: 0, z: 0}
-  _isDragging: 0
-  _cameraMain: {fileID: 0}
-  _power: 3
-  _maxDrag: 5
-  _rigidBody: {fileID: 0}
-  _lineRenderer: {fileID: 0}
-  _dragStartPos: {x: 0, y: 0, z: 0}
+  _lineRendererDraggingPosition_Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1998174843
 GameObject:
   m_ObjectHideFlags: 0
